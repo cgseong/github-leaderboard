@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: github_leaderboard
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+
+  server:
+    build: ./server
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://postgres:password@postgres:5432/github_leaderboard?schema=public
+      REDIS_URL: redis://redis:6379
+      PORT: 3000
+      JWT_SECRET: supersecret
+      CLIENT_URL: ${CLIENT_URL:-http://localhost:5173}
+    depends_on:
+      - postgres
+      - redis
+    command: sh -c "npx prisma db push && npm start"
+
+  client:
+    build: ./client
+    ports:
+      - "5173:5173"
+    environment:
+      VITE_API_URL: ${VITE_API_URL:-http://localhost:3000}
+    depends_on:
+      - server
+    volumes:
+      - ./client/src:/app/src
+
+volumes:
+  pgdata:
