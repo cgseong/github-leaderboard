@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+src/github_analysis/__init__.py
+src/github_analysis/cli.py
+src/github_analysis/config.py
+src/github_analysis/evaluator.py
+src/github_analysis/github_client.py
+src/github_analysis/models.py
+src/github_analysis/utils.py
+src/github_analysis_v2.egg-info/PKG-INFO
+src/github_analysis_v2.egg-info/SOURCES.txt
+src/github_analysis_v2.egg-info/dependency_links.txt
+src/github_analysis_v2.egg-info/entry_points.txt
+src/github_analysis_v2.egg-info/requires.txt
+src/github_analysis_v2.egg-info/top_level.txt

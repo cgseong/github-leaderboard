@@ -1,0 +1,48 @@
+name: Autograding
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install .
+
+      - name: Run test suite
+        run: |
+          if [ -d tests ]; then
+            python -m pytest tests -q
+          else
+            echo "tests 디렉터리가 없어 테스트를 건너뜁니다."
+          fi
+
+      - name: Run repository autograding
+        id: eval
+        run: |
+          repo-eval "${{ github.repository }}" \
+            --mode autograde \
+            --rubric rubric.default.yaml \
+            --output-md reports/autograde-report.md \
+            --output-json reports/autograde-report.json
+
+      - name: Upload grading report
+        uses: actions/upload-artifact@v4
+        with:
+          name: autograde-report
+          path: reports/
+

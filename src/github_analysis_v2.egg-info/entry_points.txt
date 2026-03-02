@@ -1,0 +1,2 @@
+[console_scripts]
+repo-eval = github_analysis.cli:main

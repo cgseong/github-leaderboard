@@ -1,0 +1,6 @@
+pass_score: 70
+sections:
+  code_quality: 40
+  activity: 25
+  documentation: 20
+  collaboration: 15

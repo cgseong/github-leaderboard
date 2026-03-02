@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-dark-bg: #0f172a;
+  --color-dark-panel: #1e293b;
+}
+
+body {
+  @apply bg-slate-950 text-slate-100 antialiased;
+}
+
+/* 약간의 유리 질감(Glassmorphism) 유틸리티 */
+.glass-panel {
+  @apply bg-slate-900/50 backdrop-blur-md border border-slate-700/50 shadow-xl rounded-2xl;
+}

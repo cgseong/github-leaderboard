@@ -1,0 +1,58 @@
+name: Repository Analysis
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_repo:
+        description: "Target repository (owner/repo or URL)"
+        required: true
+        type: string
+      mode:
+        description: "Run mode"
+        required: false
+        default: "standard"
+        type: choice
+        options:
+          - standard
+          - autograde
+  schedule:
+    - cron: "0 3 * * 1"
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    env:
+      TARGET_REPO: ${{ github.event.inputs.target_repo || github.repository }}
+      MODE: ${{ github.event.inputs.mode || 'standard' }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: pip install .
+
+      - name: Run analysis
+        id: eval
+        run: |
+          repo-eval "$TARGET_REPO" \
+            --mode "$MODE" \
+            --rubric rubric.default.yaml \
+            --output-md reports/report.md \
+            --output-json reports/report.json
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: repo-analysis-report
+          path: reports/
+
+      - name: Publish summary
+        if: always()
+        run: cat reports/report.md >> "$GITHUB_STEP_SUMMARY"
