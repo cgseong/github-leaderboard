@@ -147,3 +147,5 @@ repo-eval owner/repo --rubric my-rubric.yaml --token YOUR_GITHUB_TOKEN
   - CodeQL/Sonar/coverage 리포트 연동
   - LLM 피드백 단계 추가 (파일 단위 개선 제안)
   - 과목별 채점 기준 템플릿 분리
+
+![Alt](https://repobeats.axiom.co/api/embed/b4c6e16d5a126d33f6c5b6f645b38b03ebae3433.svg "Repobeats analytics image") 
