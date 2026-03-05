@@ -62,6 +62,8 @@ npm run dev
 
 ```bash
 repo-eval owner/repo --mode autograde --token YOUR_GITHUB_TOKEN
+
+![Alt](https://repobeats.axiom.co/api/embed/b4c6e16d5a126d33f6c5b6f645b38b03ebae3433.svg "Repobeats analytics image") 
 ```
 
 출력 예:
