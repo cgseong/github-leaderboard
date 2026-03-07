@@ -9,6 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Update Repobeats Cards
-        uses: amitp/repobeats@master
+        uses: 
         with:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
