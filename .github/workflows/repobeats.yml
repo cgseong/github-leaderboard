@@ -1,32 +1,24 @@
 name: Repobeats Update
 
+# 1. 실행 조건 설정
 on:
   schedule:
-    - cron: "0 0 * * *"   # 매일 00:00 UTC (KST 09:00)
-  workflow_dispatch:       # 수동 실행 버튼
+    - cron: "0 0 * * *" # 매일 자동 실행
+  workflow_dispatch:   # 수동 실행 버튼 활성화 (중요!)
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      # [Step 1] 현재 저장소 코드를 체크아웃
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-      - name: Ensure directory
-        run: mkdir -p repobeats/plots
-
-      - name: Download Repobeats SVG
-        run: |
-          curl -L "![Alt](https://repobeats.axiom.co/api/embed/b4c6e16d5a126d33f6c5b6f645b38b03ebae3433.svg " \
-            -o repobeats/plots/_stats.svg
-
-      - name: Commit updated stats
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add repobeats/plots/_stats.svg
-          git commit -m "chore: update repobeats stats" || echo "Nothing to commit"
-          git push
+      # [Step 2] Repobeats 그래프 생성 도구 실행
+      - name: Update Repobeats Cards
+        # 반드시 아래의 공식 도구 주소를 사용해야 합니다. (본인 아이디 입력 금지)
+        uses: amitp/repobeats@master
+        with:
+          # 대시보드 이미지 생성을 위한 권한 토큰
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
