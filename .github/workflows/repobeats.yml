@@ -22,7 +22,7 @@ jobs:
 
       # [Step 2] Repobeats 엔진 실행 및 이미지 생성
       - name: Update Repobeats Cards
-        uses: amitrp/repobeats@v1.0.0
+        uses: amirp/repobeats@v1.0.0
         with:
           # GitHub API에 접근하기 위한 비밀 토큰 (자동 생성됨)
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
