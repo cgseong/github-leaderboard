@@ -1,31 +1,20 @@
-# 1. 워크플로우의 이름 (Actions 탭에서 이 이름으로 표시됨)
 name: Repobeats Update
 
-# 2. 이 자동화 작업이 언제 실행될지 정의 (이벤트 설정)
 on:
   schedule:
-    # 매일 자정(UTC 0시, 한국 시간 오전 9시)에 자동으로 실행
     - cron: "0 0 * * *" 
-  workflow_dispatch: 
-    # 교수님이나 학생이 버튼을 눌러 수동으로 즉시 실행할 수 있게 허용
+  workflow_dispatch: # 수동 실행 버튼 활성화
 
-# 3. 실제 수행할 작업(Job) 정의
 jobs:
   build:
-    # 실행 환경: 최신 버전의 우분투 리눅스 서버에서 구동
     runs-on: ubuntu-latest
     
     steps:
-      # [Step 1] 저장소의 코드를 가상 서버로 가져옴
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # [Step 2] Repobeats 엔진 실행 및 이미지 생성
       - name: Update Repobeats Cards
-        uses: amirp/repobeats@v1.0.0
+        # 주소를 amitp/repobeats 로 정확히 수정했습니다.
+        uses: amitp/repobeats@v1.0.0
         with:
-          # GitHub API에 접근하기 위한 비밀 토큰 (자동 생성됨)
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      # [Step 3] 생성된 이미지(.svg)를 다시 저장소에 업로드(Commit & Push)
-      # (이 단계는 amitrp/repobeats 액션 내부에 포함되어 있음)
