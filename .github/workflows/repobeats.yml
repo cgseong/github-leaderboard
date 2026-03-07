@@ -9,6 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Update Repobeats Cards
-        uses: amitp/repobeats@v1.0.0 # amitp로 정확히 수정 (r 없음)
+        uses: amitp/repobeats@master
         with:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
