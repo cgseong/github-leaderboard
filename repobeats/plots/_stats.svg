@@ -110,25 +110,25 @@
                 <rect x="722.5" y="20" width="8" height="8" rx="1.5" opacity="0.2" fill="rgba(236, 72, 153, 1)" />
             
 
-                <rect x="731.5" y="20" width="8" height="8" rx="1.5" opacity="0.2" fill="rgba(236, 72, 153, 1)" />
+                <rect x="731.5" y="20" width="8" height="8" rx="1.5" opacity="0.2888888888888889" fill="rgba(236, 72, 153, 1)" />
             
 
-                <rect x="740.5" y="20" width="8" height="8" rx="1.5" opacity="0.2888888888888889" fill="rgba(236, 72, 153, 1)" />
+                <rect x="740.5" y="20" width="8" height="8" rx="1.5" opacity="0.2" fill="rgba(236, 72, 153, 1)" />
             
 
                 <rect x="749.5" y="20" width="8" height="8" rx="1.5" opacity="0.2" fill="rgba(236, 72, 153, 1)" />
             
 
-                <rect x="758.5" y="20" width="8" height="8" rx="1.5" opacity="0.2" fill="rgba(236, 72, 153, 1)" />
+                <rect x="758.5" y="20" width="8" height="8" rx="1.5" opacity="0.2888888888888889" fill="rgba(236, 72, 153, 1)" />
             
 
-                <rect x="767.5" y="20" width="8" height="8" rx="1.5" opacity="0.2888888888888889" fill="rgba(236, 72, 153, 1)" />
+                <rect x="767.5" y="20" width="8" height="8" rx="1.5" opacity="0.2" fill="rgba(236, 72, 153, 1)" />
             
 
-                <rect x="776.5" y="20" width="8" height="8" rx="1.5" opacity="0.2" fill="rgba(236, 72, 153, 1)" />
+                <rect x="776.5" y="20" width="8" height="8" rx="1.5" opacity="1" fill="rgba(236, 72, 153, 1)" />
             
 
-                <rect x="785.5" y="20" width="8" height="8" rx="1.5" opacity="1" fill="rgba(236, 72, 153, 1)" />
+                <rect x="785.5" y="20" width="8" height="8" rx="1.5" opacity="0.2" fill="rgba(236, 72, 153, 1)" />
             
 
                 <rect x="794.5" y="20" width="8" height="8" rx="1.5" opacity="0.2" fill="rgba(236, 72, 153, 1)" />
@@ -603,11 +603,11 @@
                     
                 
 
-                    <rect x="193.61" y="119.5" width="7.7" height="0" fill="#ff7a35" />
+                    <rect x="193.61" y="113.5" width="7.7" height="6" fill="#ff7a35" />
                     
                 
 
-                    <rect x="202.365" y="113.5" width="7.7" height="6" fill="#ff7a35" />
+                    <rect x="202.365" y="119.5" width="7.7" height="0" fill="#ff7a35" />
                     
                 
 
@@ -615,19 +615,19 @@
                     
                 
 
-                    <rect x="219.87500000000003" y="119.5" width="7.7" height="0" fill="#ff7a35" />
+                    <rect x="219.87500000000003" y="113.5" width="7.7" height="6" fill="#ff7a35" />
                     
                 
 
-                    <rect x="228.63000000000002" y="113.5" width="7.7" height="6" fill="#ff7a35" />
+                    <rect x="228.63000000000002" y="119.5" width="7.7" height="0" fill="#ff7a35" />
                     
                 
 
-                    <rect x="237.38500000000002" y="119.5" width="7.7" height="0" fill="#ff7a35" />
+                    <rect x="237.38500000000002" y="69.5" width="7.7" height="50" fill="#ff7a35" />
                     
                 
 
-                    <rect x="246.14000000000001" y="69.5" width="7.7" height="50" fill="#ff7a35" />
+                    <rect x="246.14000000000001" y="119.5" width="7.7" height="0" fill="#ff7a35" />
                     
                 
 
@@ -728,25 +728,25 @@
                         <rect x="36" y="34" width="5" height="5" opacity="0.2" fill="#487B41" />
                     
 
-                        <rect x="42" y="34" width="5" height="5" opacity="0.2" fill="#487B41" />
+                        <rect x="42" y="34" width="5" height="5" opacity="0.2888888888888889" fill="#487B41" />
                     
 
-                        <rect x="48" y="34" width="5" height="5" opacity="0.2888888888888889" fill="#487B41" />
+                        <rect x="48" y="34" width="5" height="5" opacity="0.2" fill="#487B41" />
                     
 
                         <rect x="54" y="34" width="5" height="5" opacity="0.2" fill="#487B41" />
                     
 
-                        <rect x="60" y="34" width="5" height="5" opacity="0.2" fill="#487B41" />
+                        <rect x="60" y="34" width="5" height="5" opacity="0.2888888888888889" fill="#487B41" />
                     
 
-                        <rect x="66" y="34" width="5" height="5" opacity="0.2888888888888889" fill="#487B41" />
+                        <rect x="66" y="34" width="5" height="5" opacity="0.2" fill="#487B41" />
                     
 
-                        <rect x="72" y="34" width="5" height="5" opacity="0.2" fill="#487B41" />
+                        <rect x="72" y="34" width="5" height="5" opacity="1" fill="#487B41" />
                     
 
-                        <rect x="78" y="34" width="5" height="5" opacity="1" fill="#487B41" />
+                        <rect x="78" y="34" width="5" height="5" opacity="0.2" fill="#487B41" />
                     
 
                         <rect x="84" y="34" width="5" height="5" opacity="0.2" fill="#487B41" />
