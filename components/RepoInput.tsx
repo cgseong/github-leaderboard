@@ -25,14 +25,14 @@ export default function RepoInput({ onEvaluate, loading }: RepoInputProps) {
         {/* 레포지토리 경로 입력 */}
         <div>
           <label htmlFor="repo" className="block text-sm font-medium text-gray-300 mb-2">
-            GitHub 레포지토리 (owner/repo)
+            GitHub 레포지토리 URL
           </label>
           <input
             type="text"
             id="repo"
             value={repoPath}
             onChange={(e) => setRepoPath(e.target.value)}
-            placeholder="예: facebook/react"
+            placeholder="예: https://github.com/facebook/react"
             className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             disabled={loading}
           />
@@ -70,11 +70,11 @@ export default function RepoInput({ onEvaluate, loading }: RepoInputProps) {
         </button>
       </form>
 
-      {/* 도움말 */}
-      <div className="mt-6 p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+      {/* 도움말 */}        <div className="mt-6 p-4 bg-gray-800/50 rounded-lg border border-gray-700">
         <h3 className="text-sm font-medium text-gray-300 mb-2">💡 사용법</h3>
         <ul className="text-sm text-gray-400 space-y-1">
-          <li>• 레포지토리 경로는 <code className="bg-gray-700 px-1 rounded">owner/repo</code> 형식</li>
+          <li>• GitHub 레포지토리 URL을 입력하세요 (예: https://github.com/facebook/react)</li>
+          <li>• <code className="bg-gray-700 px-1 rounded">github.com/owner/repo</code> 형식도 가능합니다</li>
           <li>• 비공개 레포지토리는 GitHub 토큰이 필요합니다</li>
           <li>• 토큰 없이도 공개 레포지토리는 평가 가능 (rate limit 적용)</li>
         </ul>

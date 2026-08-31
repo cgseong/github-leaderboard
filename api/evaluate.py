@@ -498,6 +498,12 @@ class handler(BaseHTTPRequestHandler):
         repo = data.get("repo", "")
         token = data.get("token") or None
 
+        # URL에서 owner/repo 추출
+        import re
+        github_url_match = re.search(r'github\.com\/([^/]+)\/([^/]+)', repo)
+        if github_url_match:
+            repo = f"{github_url_match.group(1)}/{github_url_match.group(2)}"
+
         # 레포지토리 경로 검증
         parts = repo.strip("/").split("/")
         if len(parts) != 2 or not parts[0] or not parts[1]:

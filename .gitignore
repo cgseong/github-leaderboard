@@ -23,3 +23,5 @@ build/
 # tool internal state
 .gjc/
 .omc/
+
+.vercel

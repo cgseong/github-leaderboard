@@ -10,18 +10,33 @@ export default function Home() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
-  const handleEvaluate = async (repoPath: string, token?: string) => {
+  const handleEvaluate = async (repoInput: string, token?: string) => {
     setLoading(true)
     setError(null)
     setResult(null)
 
     try {
+      // URL에서 owner/repo 추출
+      let repo = repoInput.trim()
+
+      // GitHub URL 파싱
+      const githubUrlMatch = repo.match(/github\.com\/([^/]+)\/([^/]+)/)
+      if (githubUrlMatch) {
+        repo = `${githubUrlMatch[1]}/${githubUrlMatch[2]}`
+      }
+
+      // owner/repo 형식 검증
+      const parts = repo.split('/')
+      if (parts.length !== 2 || !parts[0] || !parts[1]) {
+        throw new Error('올바른 GitHub 레포지토리 URL을 입력해주세요.\n예: https://github.com/facebook/react')
+      }
+
       const response = await fetch('/api/evaluate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ repo: repoPath, token }),
+        body: JSON.stringify({ repo, token }),
       })
 
       const data = await response.json()
