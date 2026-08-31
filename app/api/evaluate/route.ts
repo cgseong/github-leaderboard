@@ -178,7 +178,7 @@ export async function POST(request: NextRequest) {
 
     // AI 활용도
     const AI_TOPICS = new Set(['ai', 'artificial-intelligence', 'machine-learning', 'deep-learning', 'neural-network', 'nlp', 'llm', 'large-language-model', 'transformer', 'pytorch', 'tensorflow', 'generative-ai', 'reinforcement-learning', 'computer-vision', 'mlops'])
-    const AI_CONFIG = { '.github/copilot-instructions.md': 'GitHub Copilot', '.cursorrules': 'Cursor AI', '.aider.conf.yml': 'Aider', '.clinerules': 'Cline', '.windsurfrules': 'Windsurf' }
+    const AI_CONFIG = { '.github/copilot-instructions.md': 'GitHub Copilot', '.cursorrules': 'Cursor AI', '.aider.conf.yml': 'Aider', '.clinerules': 'Cline', '.windsurfrules': 'Windsurf', 'CLAUDE.md': 'Claude', 'claude.md': 'Claude', '.claude': 'Claude', 'codex.md': 'Codex', '.codex': 'Codex', 'GEMINI.md': 'Gemini', 'gemini.md': 'Gemini', '.gemini': 'Gemini' }
     const AI_MODEL_RE = /\.(pt|pth|onnx|h5|pb|tflite|safetensors|gguf|ggml|ckpt)$/
     const AI_TRAIN_RE = /(train(?:ing)?|finetune|fine[-_]tune|evaluate|eval|infer(?:ence)?|predict)\.py$/
 
