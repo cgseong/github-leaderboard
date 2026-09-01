@@ -205,6 +205,14 @@ class RepoEvaluator:
             return result["workflows"]
         return []
 
+    def fetch_branches(self) -> list:
+        """브랜치 목록"""
+        result = gh_get(
+            f"/repos/{self.owner}/{self.repo}/branches?per_page=100",
+            self.token,
+        )
+        return result if isinstance(result, list) else []
+
     def fetch_dependabot_alerts(self) -> list:
         """Dependabot 알림"""
         result = gh_get(
@@ -869,11 +877,15 @@ class RepoEvaluator:
         if HAS_AI_EVAL:
             ai_evaluator = AIUtilizationEvaluator(file_content_fetcher=self.get_file_content)
             topics = r.get("topics", [])
+            branches = self.fetch_branches()
             ai_result = ai_evaluator.evaluate(
                 tree=tree,
                 languages=languages,
                 topics=topics,
                 repo_data=r,
+                commits=commits,
+                pulls=pulls,
+                branches=branches,
             )
             cat_ai = CategoryResult(name="🤖 AI 활용도", weight=0.10)
             cat_ai.score = ai_result.total_score
